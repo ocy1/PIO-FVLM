@@ -58,7 +58,7 @@ This repository is the official implementation of [PIO-FVLM]().
 
 
 
-##Set Up
+## Set Up
 ## LLaVA
 
 1. Clone this repository.
@@ -77,6 +77,17 @@ pip install flash-attn --no-build-isolation
 ```
 3.Download Multimodal Benchmark
 Please follow the detailed instruction in https://github.com/haotian-liu/LLaVA/blob/main/docs/Evaluation.md
+
+## Qwen2.5-VL
+```
+conda create -n PIO_FVLM_Qwen25VL python=3.10 -y
+conda activate PIO_FVLM_Qwen25VL
+
+pip install -U transformers==4.55.4
+pip install flash-attn --no-build-isolation
+pip install -e .
+```
+
 
 
 
