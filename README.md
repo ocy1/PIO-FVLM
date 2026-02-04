@@ -66,6 +66,7 @@ This repository is the official implementation of [PIO-FVLM]().
 ```bash
 git clone https://github.com/ocy1/PIO-FVLM
 cd PIO-FVLM
+```
 
 2.Environment Setup and Preparation
 
@@ -73,7 +74,9 @@ cd PIO-FVLM
 conda activate PIO_FVLM
 pip install -e .
 pip install flash-attn --no-build-isolation
-
+```
+3.Download Multimodal Benchmark
+Please follow the detailed instruction in https://github.com/haotian-liu/LLaVA/blob/main/docs/Evaluation.md
 
 
 
