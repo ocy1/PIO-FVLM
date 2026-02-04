@@ -37,20 +37,25 @@ This repository is the official implementation of [PIO-FVLM]().
 
 ## Example
 <p align="center">
-  <a href="https://raw.githubusercontent.com/ocy1/PIO-FVLM/main/Images/4 methods new.pdf">
-    <img src="https://raw.githubusercontent.com/ocy1/PIO-FVLM/main/Images/4 methods.jpg" alt="Structure" width="100%" />
+  <a href="https://raw.githubusercontent.com/ocy1/PIO-FVLM/main/Images/4%20methods%20new.pdf">
+    <img src="https://raw.githubusercontent.com/ocy1/PIO-FVLM/main/Images/4%20methods.jpg"
+         alt="Comparison of token selection strategies"
+         width="92%" />
   </a>
   <br/>
   <em>
-   
+    Comparison of different token selection strategies.
   </em>
 </p>
 
 <blockquote>
   <p>
-    </strong> Comparison of different token selection strategies . (a) Ours; (b) Similirty with cls token and text token based; (c) cls token similarity based and enhance diversity; (d) Cls token similarity based.
+    <strong>Caption:</strong> Comparison of different token selection strategies.
+    (a) Ours; (b) text-to-image attention based; (c) diversity-oriented selection;
+    (d) CLS-token attention based.
   </p>
 </blockquote>
+
 
 
 
