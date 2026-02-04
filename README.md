@@ -35,6 +35,23 @@ This repository is the official implementation of [PIO-FVLM]().
   </p>
 </blockquote>
 
+## Example
+<p align="center">
+  <a href="https://raw.githubusercontent.com/ocy1/PIO-FVLM/main/Images/4 methods new.pdf">
+    <img src="https://raw.githubusercontent.com/ocy1/PIO-FVLM/main/Images/4 methods.jpg" alt="Structure" width="100%" />
+  </a>
+  <br/>
+  <em>
+   
+  </em>
+</p>
+
+<blockquote>
+  <p>
+    </strong> We propose PIO-FVLM, a training-free method that selects vision tokens via gradient saliency and a feature-space NMS strategy, improving efficiency while preserving performance and maintaining compatibility with efficient attention operators.
+  </p>
+</blockquote>
+
 
 
 
