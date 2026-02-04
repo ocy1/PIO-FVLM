@@ -1,23 +1,22 @@
 # PIO-FVLM
-Our code will be released publicly soon.
-# SALAD-Pan
 
-This repository is the official implementation of [SALAD-Pan]().
+This repository is the official implementation of [PIO-FVLM]().
 
-**[SALAD-Pan: Sensor-Agnostic Latent Adaptive Diffusion for Pan-Sharpening]()**
+**[PIO-FVLM: Rethinking Training-Free Visual Token Reduction for VLM Acceleration from an Inference-Objective Perspective]()**
 <br/>
-[Junjie Li](https://scholar.google.com/citations?hl=en&user=Jo_8lVcAAAAJ), 
-[Congyang Ou](https://github.com/ocy1), 
 [Haokui Zhang](https://scholar.google.com/citations?hl=en&user=m3gPwCoAAAAJ), 
-[Guoting Wei](https://scholar.google.com/citations?hl=en&user=NW8rUFkAAAAJ), 
-[Shengqin Jiang](https://ieeexplore.ieee.org/author/37086409411), 
+[Congyang Ou](https://github.com/ocy1), 
+[Dawei Yan](https://scholar.google.com/citations?user=U8KJSfcAAAAJ&hl=zh-CN&oi=ao), 
+[Peng Wang](), 
+[Qingsen Yan](https://scholar.google.com/citations?user=BSGy3foAAAAJ&hl=zh-CN&oi=ao), 
 [Ying Li](), 
+[Rong Xiao](), 
 [Chunhua Shen](https://scholar.google.com/citations?hl=en&user=Ljk2BvIAAAAJ)
 <br/>
 
-[![Project Website](https://img.shields.io/badge/Project-Website-orange)](https://salad-pan.github.io)
-[![arXiv](https://img.shields.io/badge/arXiv-2212.11565-b31b1b.svg)]()
-[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/xxfer/SALAD-Pan)
+#[![Project Website](https://img.shields.io/badge/Project-Website-orange)](https://salad-pan.github.io)
+#[![arXiv](https://img.shields.io/badge/arXiv-2212.11565-b31b1b.svg)]()
+#[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/xxfer/SALAD-Pan)
 
 <p align="center">
   <a href="https://salad-pan.github.io/assets/fig1.pdf">
