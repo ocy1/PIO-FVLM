@@ -14,6 +14,11 @@ This repository is the official implementation of [PIO-FVLM]().
 [Chunhua Shen](https://scholar.google.com/citations?hl=en&user=Ljk2BvIAAAAJ)
 <br/>
 
+## News
+- [02/01/2026] Code will be released soon!
+
+
+## Overall
 <p align="center">
   <a href="https://raw.githubusercontent.com/ocy1/PIO-FVLM/main/Images/overall_new.pdf">
     <img src="https://raw.githubusercontent.com/ocy1/PIO-FVLM/main/Images/overall_new.png" alt="Structure" width="100%" />
@@ -38,11 +43,7 @@ This repository is the official implementation of [PIO-FVLM]().
 
 
 
-## News
-<!-- ### 🚨 Announcing [](): A CVPR competition for AI-based xxxxxx! Submissions due xxx x. Don't miss out! 🤩  -->
-- [02/01/2026] Code will be released soon!
-<!-- - [04/30/2026] Pre-trained SALAD-Pan models are available on [Hugging Face Library](https://huggingface.co/xxfer/SALAD-Pan)! -->
-<!-- - [05/01/2026] Code released! -->
+
 
 ## Setup
 
