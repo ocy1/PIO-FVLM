@@ -48,7 +48,7 @@ This repository is the official implementation of [PIO-FVLM]().
 
 <blockquote>
   <p>
-    </strong> We propose PIO-FVLM, a training-free method that selects vision tokens via gradient saliency and a feature-space NMS strategy, improving efficiency while preserving performance and maintaining compatibility with efficient attention operators.
+    </strong> Comparison of different token selection strategies . (a) Ours; (b) Similirty with cls token and text token based; (c) cls token similarity based and enhance diversity; (d) Cls token similarity based.
   </p>
 </blockquote>
 
