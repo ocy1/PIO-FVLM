@@ -19,7 +19,13 @@ This repository is the official implementation of [PIO-FVLM]().
     <img src="https://raw.githubusercontent.com/ocy1/PIO-FVLM/main/Images/overall_new.png" alt="Structure" width="100%" />
   </a>
   <br/>
-  <em>Given a PAN–LRMS image pair, SALAD-Pan fine-tunes a pre-trained diffusion model to generate a HRMS.</em>
+  <em>
+  The architecture of PIO-FVLM. The overall framework consists of two stages.
+  As shown on the left, the first stage is responsible for reordering vision tokens according to gradient saliency.
+  The right side illustrates the second stage, which selects tokens based on the proposed NMS strategy.
+  The <code>pred_head</code> is a pre-trained component native to the model, a prediction head originally designed to operate on the final-layer features.
+</em>
+
 </p>
 
 
