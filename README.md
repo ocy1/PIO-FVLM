@@ -20,13 +20,19 @@ This repository is the official implementation of [PIO-FVLM]().
   </a>
   <br/>
   <em>
-  The architecture of PIO-FVLM. The overall framework consists of two stages.
-  As shown on the left, the first stage is responsible for reordering vision tokens according to gradient saliency.
-  The right side illustrates the second stage, which selects tokens based on the proposed NMS strategy.
-  The <code>pred_head</code> is a pre-trained component native to the model, a prediction head originally designed to operate on the final-layer features.
-</em>
-
+    The architecture of PIO-FVLM. The overall framework consists of two stages.
+    As shown on the left, the first stage is responsible for reordering vision tokens according to gradient saliency.
+    The right side illustrates the second stage, which selects tokens based on the proposed NMS strategy.
+    The <code>pred_head</code> is a pre-trained component native to the model, a prediction head originally designed to operate on the final-layer features.
+  </em>
 </p>
+
+<blockquote>
+  <p>
+    <strong>TLDR:</strong> We propose PIO-FVLM, a training-free method that selects vision tokens via gradient saliency and a feature-space NMS strategy, improving efficiency while preserving performance and maintaining compatibility with efficient attention operators.
+  </p>
+</blockquote>
+
 
 
 
