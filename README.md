@@ -50,7 +50,7 @@ This repository is the official implementation of [PIO-FVLM]().
 
 <blockquote>
   <p>
-    <strong>Caption:</strong> Comparison of different token selection strategies.
+   </strong> Comparison of different token selection strategies.
     (a) Ours; (b) text-to-image attention based; (c) diversity-oriented selection;
     (d) CLS-token attention based.
   </p>
