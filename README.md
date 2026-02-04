@@ -58,22 +58,26 @@ This repository is the official implementation of [PIO-FVLM]().
 
 
 
+##Set Up
+## LLaVA
+
+1. Clone this repository.
+
+```bash
+git clone https://github.com/ocy1/PIO-FVLM
+cd PIO-FVLM
+
+2.Environment Setup and Preparation
+
+```conda create -n PIO_FVLM python=3.10 -y
+conda activate PIO_FVLM
+pip install -e .
+pip install flash-attn --no-build-isolation
 
 
 
 
 
-
-
-
-
-## Setup
-
-### Requirements
-
-```shell
-pip install -r requirements.txt
-```
 
 
 ## Usage
