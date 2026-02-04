@@ -95,7 +95,16 @@ pip install -e .
 
 
 ## Usage
+## LLaVA
+```
+Coming soon.
+```
 
+
+## Qwen2.5-VL
+```
+Coming soon.
+```
 
 
 
@@ -104,7 +113,7 @@ pip install -e .
 
 If you make use of our work, please cite our paper.
 
-```bibtex
+```
 ```
 
 
