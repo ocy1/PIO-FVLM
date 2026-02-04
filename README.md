@@ -14,17 +14,9 @@ This repository is the official implementation of [PIO-FVLM]().
 [Chunhua Shen](https://scholar.google.com/citations?hl=en&user=Ljk2BvIAAAAJ)
 <br/>
 
-#[![Project Website](https://img.shields.io/badge/Project-Website-orange)](https://salad-pan.github.io)
-#[![arXiv](https://img.shields.io/badge/arXiv-2212.11565-b31b1b.svg)]()
-#[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/xxfer/SALAD-Pan)
 
-<p align="center">
-  <a href="https://salad-pan.github.io/assets/fig1.pdf">
-    <img src="https://salad-pan.github.io/assets/fig1-1.png" alt="Structure" width="100%" />
-  </a>
-  <br/>
-  <em>Given a PAN–LRMS image pair, SALAD-Pan fine-tunes a pre-trained diffusion model to generate a HRMS.</em>
-</p>
+
+
 
 
 
