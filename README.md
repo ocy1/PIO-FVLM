@@ -56,7 +56,19 @@ This repository is the official implementation of [PIO-FVLM]().
   </p>
 </blockquote>
 
+## Performance Results
 
+Here is the performance comparison of our method against the baseline LLaVA models. Our approach significantly reduces computation overhead (Prefill Time, Total Time, FLOPs, and KV Cache) while maintaining competitive performance on the POPE benchmark.
+
+| Methods | Prefill Time↓ (s) | Total Time↓ (s) | Avg FLOPs↓ (T) | KV Cache↓ (MB) | POPE (Acc) |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **LLaVA-1.5-7B** | 1401 (1.00×) | 2234 (1.00×) | 2.98 (1.00×) | 318 (1.00×) | 85.9 |
+| +Ours(%11.1) | **1106 (1.27×)** | **1978 (1.13×)** | **0.45 (6.62×)** | **62 (5.13×)** | 84.3 |
+| **LLaVA-NEXT-7B** | 4934 (1.00×) | 5921 (1.00×) | 16.67 (1.00×) | 1156 (1.00×) | 86.5 |
+| +Ours(%11.1) | **1844 (2.67×)** | **2810 (2.11×)** | **2.68 (6.22×)** | **191 (6.05×)** | 84.5 |
+
+> **Note:** > * `↓` indicates that lower is better. 
+> * Values in parentheses represent the reduction ratio/speedup compared to the respective baseline.
 
 ## Set Up
 ## LLaVA
