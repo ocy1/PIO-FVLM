@@ -111,9 +111,15 @@ Coming soon.
 
 ## Citation
 
-If you make use of our work, please cite our paper.
+If you find our work useful for your research, please consider citing:
 
-```
-```
+```bibtex
+@article{zhang2026pio,
+  title={PIO-FVLM: Rethinking Training-Free Visual Token Reduction for VLM Acceleration from an Inference-Objective Perspective},
+  author={Zhang, Haokui and Ou, Congyang and Yan, Dawei and Wang, Peng and Yan, Qingsen and Li, Ying and Xiao, Rong and Shen, Chunhua},
+  journal={arXiv preprint arXiv:2602.04657},
+  year={2026}
+}
+
 
 
