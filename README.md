@@ -56,48 +56,422 @@ This repository is the official implementation of [PIO-FVLM]().
   </p>
 </blockquote>
 
-## Comprehensive Benchmark Results
+## 🏆 Comprehensive Benchmark Results
 
 The following table presents a detailed comparison of our method (PIO-FVLM) against various state-of-the-art baselines across multiple benchmarks under different token retention budgets.
 
-| Type (Tokens) | Methods | Venue | GQA | MMB | MMB-cn | MME | POPE | SQA | VQAv2 | TextVQA | Average |
-| :--- | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Upper Bound (576)** | Vanilla | – | 61.9 | 64.7 | 58.1 | 1862 | 85.9 | 69.5 | 78.5 | 58.2 | 100% |
-| | | | | | | | | | | | |
-| **w/o VE (192, 33.3%)** | FastV | ECCV’24 | 52.7 | 61.2 | 57.0 | 1612 | 64.8 | 67.3 | 67.1 | 52.5 | 89.0% |
-| | PDrop | CVPR’25 | 57.1 | 63.2 | 56.8 | 1766 | 82.3 | 68.8 | 75.1 | 56.1 | 96.2% |
-| | SparseVLM | ICML’25 | 59.5 | 64.1 | 53.7 | 1787 | 85.3 | 68.7 | 75.6 | 57.8 | 97.2% |
-| | DART | EMNLP’25 | 60.0 | 63.6 | 57.0 | 1856 | 82.8 | 69.8 | 76.7 | 57.4 | 98.3% |
-| | **PIO-FVLM (Ours)** | **Ours** | **61.0** | **64.4** | **57.6** | **1789** | **86.5** | **69.0** | **77.7** | **57.2** | **98.8%** |
-| | | | | | | | | | | | |
-| **w/ VE (192, 33.3%)**| VisionZip | CVPR’25 | 59.3 | 63.0 | 57.3 | 1782 | 85.3 | 68.9 | 76.8 | 57.3 | 97.8% |
-| | HoloV | NeurIPS’25 | 59.0 | 65.4 | 58.0 | 1820 | 85.6 | 69.8 | 76.7 | 57.4 | 98.7% |
-| | SCOPE | NeurIPS’25 | 60.1 | 63.6 | 56.8 | 1804 | 86.4 | 68.8 | 77.2 | 57.7 | 98.3% |
-| | **PIO-FVLM (Ours)** | **Ours** | **61.1** | **64.2** | **57.9** | **1808** | **86.4** | **68.2** | **77.9** | **57.4** | **98.9%** |
-| | | | | | | | | | | | |
-| **w/o VE (128, 22.2%)**| FastV | ECCV’24 | 49.6 | 56.1 | 56.4 | 1490 | 59.6 | 60.2 | 61.8 | 50.6 | 83.2% |
-| | PDrop | CVPR’25 | 56.0 | 61.1 | 56.6 | 1644 | 82.3 | 68.3 | 72.9 | 55.1 | 94.0% |
-| | SparseVLM | ICML’25 | 58.4 | 64.5 | 51.1 | 1746 | 85.0 | 68.6 | 73.8 | 56.7 | 95.6% |
-| | DART | EMNLP’25 | 58.7 | 63.2 | 57.5 | 1840 | 80.1 | 69.1 | 75.9 | 56.4 | 97.0% |
-| | **PIO-FVLM (Ours)** | **Ours** | **60.0** | **62.9** | **57.1** | **1807** | **86.7** | **68.5** | **76.5** | **57.2** | **98.1%** |
-| | | | | | | | | | | | |
-| **w/ VE (128, 22.2%)**| VisionZip | CVPR’25 | 57.6 | 62.0 | 56.7 | 1761.7 | 83.2 | 68.9 | 75.6 | 56.8 | 96.4% |
-| | HoloV | NeurIPS’25 | 57.7 | 63.9 | 56.5 | 1802 | 84.0 | 69.8 | 75.5 | 56.8 | 97.2% |
-| | SCOPE | NeurIPS’25 | 59.7 | 62.5 | 56.9 | 1776 | 86.1 | 68.4 | 76.5 | 57.2 | 97.5% |
-| | **PIO-FVLM (Ours)** | **Ours** | **60.0** | **62.9** | **56.7** | **1799** | **86.4** | **69.2** | **77.1** | **57.0** | **98.1%** |
-| | | | | | | | | | | | |
-| **w/o VE (64, 11.1%)** | FastV | ECCV’24 | 46.1 | 48.0 | 52.7 | 1256 | 48.0 | 51.1 | 55.0 | 47.8 | 74.0% |
-| | PDrop | CVPR’25 | 41.9 | 33.3 | 50.5 | 1092 | 55.9 | 68.6 | 69.2 | 45.9 | 74.4% |
-| | SparseVLM | ICML’25 | 53.8 | 60.1 | 52.7 | 1589 | 77.5 | 69.8 | 68.2 | 53.4 | 90.6% |
-| | DART | EMNLP’25 | 55.9 | 60.6 | 53.2 | 1765 | 73.9 | 69.8 | 72.4 | 54.4 | 92.8% |
-| | **PIO-FVLM (Ours)** | **Ours** | **58.0** | **61.6** | **53.7** | **1681** | **84.3** | **68.5** | **74.8** | **54.9** | **94.7%** |
-| | | | | | | | | | | | |
-| **w/ VE (64, 11.1%)** | VisionZip | CVPR’25 | 55.1 | 60.1 | 55.4 | 1690 | 77.0 | 69.0 | 72.4 | 55.5 | 93.0% |
-| | HoloV | NeurIPS’25 | 55.3 | 63.3 | 55.1 | 1715 | 80.3 | 69.5 | 72.8 | 55.4 | 94.4% |
-| | SCOPE | NeurIPS’25 | 58.3 | 61.7 | 54.4 | 1698 | 83.9 | 68.6 | 75.3 | 56.6 | 95.4% |
-| | **PIO-FVLM (Ours)** | **Ours** | **58.3** | **61.6** | **56.5** | **1744** | **86.4** | **68.6** | **75.9** | **56.2** | **96.6%** |
+<table>
+  <thead>
+    <tr>
+      <th align="left">Methods</th>
+      <th align="left">Venue</th>
+      <th align="center">GQA</th>
+      <th align="center">MMB</th>
+      <th align="center">MMB-cn</th>
+      <th align="center">MME</th>
+      <th align="center">POPE</th>
+      <th align="center">SQA</th>
+      <th align="center">VQAv2</th>
+      <th align="center">TextVQA</th>
+      <th align="center">Average</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="11" align="center"><strong>Upper Bound (576 Tokens)</strong></td>
+    </tr>
+    <tr>
+      <td align="left">Vanilla</td>
+      <td align="left">–</td>
+      <td align="center">61.9</td>
+      <td align="center">64.7</td>
+      <td align="center">58.1</td>
+      <td align="center">1862</td>
+      <td align="center">85.9</td>
+      <td align="center">69.5</td>
+      <td align="center">78.5</td>
+      <td align="center">58.2</td>
+      <td align="center">100%</td>
+    </tr>
 
-> **Note:** Base model used is **LLaVA-1.5-7B**. The baseline "Upper Bound" utilizes all 576 tokens.
+    <tr>
+      <td colspan="11" align="center"><strong>w/o VE (192 Tokens, 33.3%)</strong></td>
+    </tr>
+    <tr>
+      <td align="left">FastV</td>
+      <td align="left">ECCV’24</td>
+      <td align="center">52.7</td>
+      <td align="center">61.2</td>
+      <td align="center">57.0</td>
+      <td align="center">1612</td>
+      <td align="center">64.8</td>
+      <td align="center">67.3</td>
+      <td align="center">67.1</td>
+      <td align="center">52.5</td>
+      <td align="center">89.0%</td>
+    </tr>
+    <tr>
+      <td align="left">PDrop</td>
+      <td align="left">CVPR’25</td>
+      <td align="center">57.1</td>
+      <td align="center">63.2</td>
+      <td align="center">56.8</td>
+      <td align="center">1766</td>
+      <td align="center">82.3</td>
+      <td align="center">68.8</td>
+      <td align="center">75.1</td>
+      <td align="center">56.1</td>
+      <td align="center">96.2%</td>
+    </tr>
+    <tr>
+      <td align="left">SparseVLM</td>
+      <td align="left">ICML’25</td>
+      <td align="center">59.5</td>
+      <td align="center">64.1</td>
+      <td align="center">53.7</td>
+      <td align="center">1787</td>
+      <td align="center">85.3</td>
+      <td align="center">68.7</td>
+      <td align="center">75.6</td>
+      <td align="center">57.8</td>
+      <td align="center">97.2%</td>
+    </tr>
+    <tr>
+      <td align="left">DART</td>
+      <td align="left">EMNLP’25</td>
+      <td align="center">60.0</td>
+      <td align="center">63.6</td>
+      <td align="center">57.0</td>
+      <td align="center">1856</td>
+      <td align="center">82.8</td>
+      <td align="center">69.8</td>
+      <td align="center">76.7</td>
+      <td align="center">57.4</td>
+      <td align="center">98.3%</td>
+    </tr>
+    <tr>
+      <td align="left"><strong>PIO-FVLM (Ours)</strong></td>
+      <td align="left"><strong>Ours</strong></td>
+      <td align="center"><strong>61.0</strong></td>
+      <td align="center"><strong>64.4</strong></td>
+      <td align="center"><strong>57.6</strong></td>
+      <td align="center"><strong>1789</strong></td>
+      <td align="center"><strong>86.5</strong></td>
+      <td align="center"><strong>69.0</strong></td>
+      <td align="center"><strong>77.7</strong></td>
+      <td align="center"><strong>57.2</strong></td>
+      <td align="center"><strong>98.8%</strong></td>
+    </tr>
+
+    <tr>
+      <td colspan="11" align="center"><strong>w/ VE (192 Tokens, 33.3%)</strong></td>
+    </tr>
+    <tr>
+      <td align="left">VisionZip</td>
+      <td align="left">CVPR’25</td>
+      <td align="center">59.3</td>
+      <td align="center">63.0</td>
+      <td align="center">57.3</td>
+      <td align="center">1782</td>
+      <td align="center">85.3</td>
+      <td align="center">68.9</td>
+      <td align="center">76.8</td>
+      <td align="center">57.3</td>
+      <td align="center">97.8%</td>
+    </tr>
+    <tr>
+      <td align="left">HoloV</td>
+      <td align="left">NeurIPS’25</td>
+      <td align="center">59.0</td>
+      <td align="center">65.4</td>
+      <td align="center">58.0</td>
+      <td align="center">1820</td>
+      <td align="center">85.6</td>
+      <td align="center">69.8</td>
+      <td align="center">76.7</td>
+      <td align="center">57.4</td>
+      <td align="center">98.7%</td>
+    </tr>
+    <tr>
+      <td align="left">SCOPE</td>
+      <td align="left">NeurIPS’25</td>
+      <td align="center">60.1</td>
+      <td align="center">63.6</td>
+      <td align="center">56.8</td>
+      <td align="center">1804</td>
+      <td align="center">86.4</td>
+      <td align="center">68.8</td>
+      <td align="center">77.2</td>
+      <td align="center">57.7</td>
+      <td align="center">98.3%</td>
+    </tr>
+    <tr>
+      <td align="left"><strong>PIO-FVLM (Ours)</strong></td>
+      <td align="left"><strong>Ours</strong></td>
+      <td align="center"><strong>61.1</strong></td>
+      <td align="center"><strong>64.2</strong></td>
+      <td align="center"><strong>57.9</strong></td>
+      <td align="center"><strong>1808</strong></td>
+      <td align="center"><strong>86.4</strong></td>
+      <td align="center"><strong>68.2</strong></td>
+      <td align="center"><strong>77.9</strong></td>
+      <td align="center"><strong>57.4</strong></td>
+      <td align="center"><strong>98.9%</strong></td>
+    </tr>
+
+    <tr>
+      <td colspan="11" align="center"><strong>w/o VE (128 Tokens, 22.2%)</strong></td>
+    </tr>
+    <tr>
+      <td align="left">FastV</td>
+      <td align="left">ECCV’24</td>
+      <td align="center">49.6</td>
+      <td align="center">56.1</td>
+      <td align="center">56.4</td>
+      <td align="center">1490</td>
+      <td align="center">59.6</td>
+      <td align="center">60.2</td>
+      <td align="center">61.8</td>
+      <td align="center">50.6</td>
+      <td align="center">83.2%</td>
+    </tr>
+    <tr>
+      <td align="left">PDrop</td>
+      <td align="left">CVPR’25</td>
+      <td align="center">56.0</td>
+      <td align="center">61.1</td>
+      <td align="center">56.6</td>
+      <td align="center">1644</td>
+      <td align="center">82.3</td>
+      <td align="center">68.3</td>
+      <td align="center">72.9</td>
+      <td align="center">55.1</td>
+      <td align="center">94.0%</td>
+    </tr>
+    <tr>
+      <td align="left">SparseVLM</td>
+      <td align="left">ICML’25</td>
+      <td align="center">58.4</td>
+      <td align="center">64.5</td>
+      <td align="center">51.1</td>
+      <td align="center">1746</td>
+      <td align="center">85.0</td>
+      <td align="center">68.6</td>
+      <td align="center">73.8</td>
+      <td align="center">56.7</td>
+      <td align="center">95.6%</td>
+    </tr>
+    <tr>
+      <td align="left">DART</td>
+      <td align="left">EMNLP’25</td>
+      <td align="center">58.7</td>
+      <td align="center">63.2</td>
+      <td align="center">57.5</td>
+      <td align="center">1840</td>
+      <td align="center">80.1</td>
+      <td align="center">69.1</td>
+      <td align="center">75.9</td>
+      <td align="center">56.4</td>
+      <td align="center">97.0%</td>
+    </tr>
+    <tr>
+      <td align="left"><strong>PIO-FVLM (Ours)</strong></td>
+      <td align="left"><strong>Ours</strong></td>
+      <td align="center"><strong>60.0</strong></td>
+      <td align="center"><strong>62.9</strong></td>
+      <td align="center"><strong>57.1</strong></td>
+      <td align="center"><strong>1807</strong></td>
+      <td align="center"><strong>86.7</strong></td>
+      <td align="center"><strong>68.5</strong></td>
+      <td align="center"><strong>76.5</strong></td>
+      <td align="center"><strong>57.2</strong></td>
+      <td align="center"><strong>98.1%</strong></td>
+    </tr>
+
+    <tr>
+      <td colspan="11" align="center"><strong>w/ VE (128 Tokens, 22.2%)</strong></td>
+    </tr>
+    <tr>
+      <td align="left">VisionZip</td>
+      <td align="left">CVPR’25</td>
+      <td align="center">57.6</td>
+      <td align="center">62.0</td>
+      <td align="center">56.7</td>
+      <td align="center">1761.7</td>
+      <td align="center">83.2</td>
+      <td align="center">68.9</td>
+      <td align="center">75.6</td>
+      <td align="center">56.8</td>
+      <td align="center">96.4%</td>
+    </tr>
+    <tr>
+      <td align="left">HoloV</td>
+      <td align="left">NeurIPS’25</td>
+      <td align="center">57.7</td>
+      <td align="center">63.9</td>
+      <td align="center">56.5</td>
+      <td align="center">1802</td>
+      <td align="center">84.0</td>
+      <td align="center">69.8</td>
+      <td align="center">75.5</td>
+      <td align="center">56.8</td>
+      <td align="center">97.2%</td>
+    </tr>
+    <tr>
+      <td align="left">SCOPE</td>
+      <td align="left">NeurIPS’25</td>
+      <td align="center">59.7</td>
+      <td align="center">62.5</td>
+      <td align="center">56.9</td>
+      <td align="center">1776</td>
+      <td align="center">86.1</td>
+      <td align="center">68.4</td>
+      <td align="center">76.5</td>
+      <td align="center">57.2</td>
+      <td align="center">97.5%</td>
+    </tr>
+    <tr>
+      <td align="left"><strong>PIO-FVLM (Ours)</strong></td>
+      <td align="left"><strong>Ours</strong></td>
+      <td align="center"><strong>60.0</strong></td>
+      <td align="center"><strong>62.9</strong></td>
+      <td align="center"><strong>56.7</strong></td>
+      <td align="center"><strong>1799</strong></td>
+      <td align="center"><strong>86.4</strong></td>
+      <td align="center"><strong>69.2</strong></td>
+      <td align="center"><strong>77.1</strong></td>
+      <td align="center"><strong>57.0</strong></td>
+      <td align="center"><strong>98.1%</strong></td>
+    </tr>
+
+    <tr>
+      <td colspan="11" align="center"><strong>w/o VE (64 Tokens, 11.1%)</strong></td>
+    </tr>
+    <tr>
+      <td align="left">FastV</td>
+      <td align="left">ECCV’24</td>
+      <td align="center">46.1</td>
+      <td align="center">48.0</td>
+      <td align="center">52.7</td>
+      <td align="center">1256</td>
+      <td align="center">48.0</td>
+      <td align="center">51.1</td>
+      <td align="center">55.0</td>
+      <td align="center">47.8</td>
+      <td align="center">74.0%</td>
+    </tr>
+    <tr>
+      <td align="left">PDrop</td>
+      <td align="left">CVPR’25</td>
+      <td align="center">41.9</td>
+      <td align="center">33.3</td>
+      <td align="center">50.5</td>
+      <td align="center">1092</td>
+      <td align="center">55.9</td>
+      <td align="center">68.6</td>
+      <td align="center">69.2</td>
+      <td align="center">45.9</td>
+      <td align="center">74.4%</td>
+    </tr>
+    <tr>
+      <td align="left">SparseVLM</td>
+      <td align="left">ICML’25</td>
+      <td align="center">53.8</td>
+      <td align="center">60.1</td>
+      <td align="center">52.7</td>
+      <td align="center">1589</td>
+      <td align="center">77.5</td>
+      <td align="center">69.8</td>
+      <td align="center">68.2</td>
+      <td align="center">53.4</td>
+      <td align="center">90.6%</td>
+    </tr>
+    <tr>
+      <td align="left">DART</td>
+      <td align="left">EMNLP’25</td>
+      <td align="center">55.9</td>
+      <td align="center">60.6</td>
+      <td align="center">53.2</td>
+      <td align="center">1765</td>
+      <td align="center">73.9</td>
+      <td align="center">69.8</td>
+      <td align="center">72.4</td>
+      <td align="center">54.4</td>
+      <td align="center">92.8%</td>
+    </tr>
+    <tr>
+      <td align="left"><strong>PIO-FVLM (Ours)</strong></td>
+      <td align="left"><strong>Ours</strong></td>
+      <td align="center"><strong>58.0</strong></td>
+      <td align="center"><strong>61.6</strong></td>
+      <td align="center"><strong>53.7</strong></td>
+      <td align="center"><strong>1681</strong></td>
+      <td align="center"><strong>84.3</strong></td>
+      <td align="center"><strong>68.5</strong></td>
+      <td align="center"><strong>74.8</strong></td>
+      <td align="center"><strong>54.9</strong></td>
+      <td align="center"><strong>94.7%</strong></td>
+    </tr>
+
+    <tr>
+      <td colspan="11" align="center"><strong>w/ VE (64 Tokens, 11.1%)</strong></td>
+    </tr>
+    <tr>
+      <td align="left">VisionZip</td>
+      <td align="left">CVPR’25</td>
+      <td align="center">55.1</td>
+      <td align="center">60.1</td>
+      <td align="center">55.4</td>
+      <td align="center">1690</td>
+      <td align="center">77.0</td>
+      <td align="center">69.0</td>
+      <td align="center">72.4</td>
+      <td align="center">55.5</td>
+      <td align="center">93.0%</td>
+    </tr>
+    <tr>
+      <td align="left">HoloV</td>
+      <td align="left">NeurIPS’25</td>
+      <td align="center">55.3</td>
+      <td align="center">63.3</td>
+      <td align="center">55.1</td>
+      <td align="center">1715</td>
+      <td align="center">80.3</td>
+      <td align="center">69.5</td>
+      <td align="center">72.8</td>
+      <td align="center">55.4</td>
+      <td align="center">94.4%</td>
+    </tr>
+    <tr>
+      <td align="left">SCOPE</td>
+      <td align="left">NeurIPS’25</td>
+      <td align="center">58.3</td>
+      <td align="center">61.7</td>
+      <td align="center">54.4</td>
+      <td align="center">1698</td>
+      <td align="center">83.9</td>
+      <td align="center">68.6</td>
+      <td align="center">75.3</td>
+      <td align="center">56.6</td>
+      <td align="center">95.4%</td>
+    </tr>
+    <tr>
+      <td align="left"><strong>PIO-FVLM (Ours)</strong></td>
+      <td align="left"><strong>Ours</strong></td>
+      <td align="center"><strong>58.3</strong></td>
+      <td align="center"><strong>61.6</strong></td>
+      <td align="center"><strong>56.5</strong></td>
+      <td align="center"><strong>1744</strong></td>
+      <td align="center"><strong>86.4</strong></td>
+      <td align="center"><strong>68.6</strong></td>
+      <td align="center"><strong>75.9</strong></td>
+      <td align="center"><strong>56.2</strong></td>
+      <td align="center"><strong>96.6%</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+> **Note:** Base model used is LLaVA-1.5-7B. The baseline "Upper Bound" utilizes all 576 tokens.
 ## Performance Results
 
 Here is the performance comparison of our method against the baseline LLaVA models. Our approach significantly reduces computation overhead (Prefill Time, Total Time, FLOPs, and KV Cache) while maintaining competitive performance on the POPE benchmark.
