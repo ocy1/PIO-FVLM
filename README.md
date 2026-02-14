@@ -110,7 +110,6 @@ Coming soon.
 
 
 ## Citation
-
 If you find our work useful for your research, please consider citing:
 
 ```bibtex
