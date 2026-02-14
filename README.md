@@ -56,7 +56,7 @@ This repository is the official implementation of [PIO-FVLM]().
   </p>
 </blockquote>
 
-## 🏆 Comprehensive Benchmark Results
+##Performance Results
 
 The following table presents a detailed comparison of our method (PIO-FVLM) against various state-of-the-art baselines across multiple benchmarks under different token retention budgets.
 
