@@ -120,6 +120,4 @@ If you find our work useful for your research, please consider citing:
   journal={arXiv preprint arXiv:2602.04657},
   year={2026}
 }
-
-
-
+```
