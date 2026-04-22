@@ -14,8 +14,6 @@ This repository is the official implementation of [PIO-FVLM]().
 [Chunhua Shen](https://scholar.google.com/citations?hl=en&user=Ljk2BvIAAAAJ)
 <br/>
 
-## News
-- [02/01/2026] Code will be released soon!
 
 
 ## Overall
@@ -517,16 +515,66 @@ pip install -e .
 
 
 ## Usage
-## LLaVA
-```
-Coming soon.
+
+### LLaVA
+
+For LLaVA-1.5 and LLaVA-NeXT, you can run evaluation with the scripts under `scripts/`. A typical example is:
+
+```bash
+python -m llava.eval.model_vqa_loader \
+    --model-path ../data/model/llava-v1.5-7b \
+    --question-file ../data/eval/MME/llava_mme.jsonl \
+    --image-folder ../data/eval/MME/MME_Benchmark_release_version/MME_Benchmark \
+    --answers-file ../data/eval/MME/answers/llava-v1.5-7b.jsonl \
+    --temperature 0 \
+    --layer_list '[16]' \
+    --image_token_list '[32]' \
+    --visual_token_num 96 \
+    --conv-mode vicuna_v1
 ```
 
+Please replace `--model-path` with your own checkpoint path. `--question-file` specifies the evaluation file, `--image-folder` should point to the corresponding image directory, and `--answers-file` is the path used to save model predictions.
 
-## Qwen2.5-VL
+The pruning behavior is mainly controlled by `--layer_list`, `--image_token_list`, and `--visual_token_num`. By default, we use:
+
+* `--layer_list '[16]'`
+* `--image_token_list '[32]'`
+* `--visual_token_num 96`
+
+This means 96 visual tokens are kept after the visual encoder, and then reduced to 32 at the 16th LLM layer. Under this setting, the model maintains an average of 64 visual tokens across all 32 layers.
+
+Both `--layer_list` and `--image_token_list` support multiple entries. For example, you may set:
+
+```bash
+--layer_list '[8,16]' --image_token_list '[188,96]'
 ```
-Coming soon.
+
+to perform progressive pruning at multiple layers, similar to PyramidDrop-style scheduling.
+
+### Qwen2.5-VL
+
+For Qwen2.5-VL, the evaluation command is:
+
+```bash
+python -m qwen.eval.model_vqa_loader \
+    --model-path ../data/model/Qwen2.5-VL-7B-Instruct \
+    --question-file ../data/eval/MME/llava_mme.jsonl \
+    --image-folder ../data/eval/MME/MME_Benchmark_release_version/MME_Benchmark \
+    --answers-file ../data/eval/MME/answers/Qwen2.5-VL-7B-Instruct.jsonl \
+    --temperature 0 \
+    --layer-list '[14]' \
+    --image-token-ratio-list '[0.333]' \
+    --image-token-ratio 0.167
 ```
+
+Since Qwen2.5-VL uses dynamic-resolution visual encoding, the number of visual tokens varies across images. Therefore, ratio-based settings are used instead of fixed token counts.
+
+By default:
+
+* `--image-token-ratio 0.167` keeps 16.7% of visual tokens after visual encoding
+* `--image-token-ratio-list '[0.333]'` further reduces them to 33.3% at the 14th LLM layer
+
+This results in an average visual token retention ratio of 11.1% across the 28 LLM layers.
 
 
 
