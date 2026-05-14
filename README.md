@@ -500,8 +500,8 @@ Please follow the detailed instruction in https://github.com/haotian-liu/LLaVA/b
 
 ## Qwen2.5-VL
 ```
-conda create -n PIO_FVLM_Qwen25VL python=3.10 -y
-conda activate PIO_FVLM_Qwen25VL
+conda create -n TRIO_Qwen25VL python=3.10 -y
+conda activate TRIO_Qwen25VL
 
 pip install -U transformers==4.55.4
 pip install flash-attn --no-build-isolation
@@ -583,9 +583,10 @@ This results in an average visual token retention ratio of 11.1% across the 28 L
 If you find our work useful for your research, please consider citing:
 
 ```bibtex
-@article{zhang2026pio,
-  title={PIO-FVLM: Rethinking Training-Free Visual Token Reduction for VLM Acceleration from an Inference-Objective Perspective},
-  author={Zhang, Haokui and Ou, Congyang and Yan, Dawei and Wang, Peng and Yan, Qingsen and Li, Ying and Xiao, Rong and Shen, Chunhua},
+@article{zhang2026trio,
+  title={TRIO: Token Reduction via Inference-Objective Guidance
+for Efficient Vision-Language Models},
+  author={Zhang, Haokui and Ou, Congyang and Yan, Dawei and Wang, Peng and Yan, Qingsen and Yu, Zhang and Li, Ying and Xiao, Rong },
   journal={arXiv preprint arXiv:2602.04657},
   year={2026}
 }
