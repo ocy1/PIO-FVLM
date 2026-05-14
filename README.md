@@ -325,7 +325,7 @@ The following table presents a detailed comparison of our method (TRIO) against 
 <td align="center">97.5%</td>
 </tr>
 <tr>
-<td align="left"><strong>PIO-FVLM (Ours)</strong></td>
+<td align="left"><strong>TRIO (Ours)</strong></td>
 <td align="left"><strong>Ours</strong></td>
 <td align="center"><strong>60.0</strong></td>
 <td align="center"><strong>62.9</strong></td>
