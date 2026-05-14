@@ -1,6 +1,6 @@
 # TRIO
 
-This repository is the official implementation of [PIO-FVLM]().
+This repository is the official implementation of [TRIO]().
 
 **[TRIO: Token Reduction via Inference-Objective Guidance for Efficient Vision-Language Models]()**
 <br/>
@@ -18,8 +18,8 @@ This repository is the official implementation of [PIO-FVLM]().
 
 ## Overall
 <p align="center">
-  <a href="https://raw.githubusercontent.com/ocy1/PIO-FVLM/main/Images/overall_new.pdf">
-    <img src="https://raw.githubusercontent.com/ocy1/PIO-FVLM/main/Images/overall_new.png" alt="Structure" width="100%" />
+  <a href="https://raw.githubusercontent.com/ocy1/TRIO/main/Images/overall_new.pdf">
+    <img src="https://raw.githubusercontent.com/ocy1/TRIO/main/Images/overall_new.png" alt="Structure" width="100%" />
   </a>
   <br/>
   <em>
@@ -147,7 +147,7 @@ The following table presents a detailed comparison of our method (TRIO) against 
 <td align="center">98.3%</td>
 </tr>
 <tr>
-<td align="left"><strong>PIO-FVLM (Ours)</strong></td>
+<td align="left"><strong>TRIO (Ours)</strong></td>
 <td align="left"><strong>Ours</strong></td>
 <td align="center"><strong>61.0</strong></td>
 <td align="center"><strong>64.4</strong></td>
