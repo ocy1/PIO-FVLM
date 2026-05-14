@@ -1,17 +1,17 @@
-# PIO-FVLM
+# TRIO
 
 This repository is the official implementation of [PIO-FVLM]().
 
-**[PIO-FVLM: Rethinking Training-Free Visual Token Reduction for VLM Acceleration from an Inference-Objective Perspective]()**
+**[TRIO: Token Reduction via Inference-Objective Guidance for Efficient Vision-Language Models]()**
 <br/>
 [Haokui Zhang](https://scholar.google.com/citations?hl=en&user=m3gPwCoAAAAJ), 
 [Congyang Ou](https://github.com/ocy1), 
 [Dawei Yan](https://scholar.google.com/citations?user=U8KJSfcAAAAJ&hl=zh-CN&oi=ao), 
 [Peng Wang](), 
 [Qingsen Yan](https://scholar.google.com/citations?user=BSGy3foAAAAJ&hl=zh-CN&oi=ao), 
+[Yu Zhang](), 
 [Ying Li](), 
 [Rong Xiao](), 
-[Chunhua Shen](https://scholar.google.com/citations?hl=en&user=Ljk2BvIAAAAJ)
 <br/>
 
 
@@ -29,14 +29,14 @@ This repository is the official implementation of [PIO-FVLM]().
 
 <blockquote>
   <p>
-    </strong> We propose PIO-FVLM, a training-free method that selects vision tokens via gradient saliency and a feature-space NMS strategy, improving efficiency while preserving performance and maintaining compatibility with efficient attention operators.
+    </strong> We propose TRIO, a training-free method that selects vision tokens via gradient saliency and a feature-space NMS strategy, improving efficiency while preserving performance and maintaining compatibility with efficient attention operators.
   </p>
 </blockquote>
 
 ## Example
 <p align="center">
-  <a href="https://raw.githubusercontent.com/ocy1/PIO-FVLM/main/Images/4%20methods%20new.pdf">
-    <img src="https://raw.githubusercontent.com/ocy1/PIO-FVLM/main/Images/4%20methods.jpg"
+  <a href="https://raw.githubusercontent.com/ocy1/TRIO/main/Images/4%20methods%20new.pdf">
+    <img src="https://raw.githubusercontent.com/ocy1/TRIO/main/Images/4%20methods.jpg"
          alt="Comparison of token selection strategies"
          width="92%" />
   </a>
@@ -56,7 +56,7 @@ This repository is the official implementation of [PIO-FVLM]().
 
 ## Performance Results
 
-The following table presents a detailed comparison of our method (PIO-FVLM) against various state-of-the-art baselines across multiple benchmarks under different token retention budgets.
+The following table presents a detailed comparison of our method (TRIO) against various state-of-the-art baselines across multiple benchmarks under different token retention budgets.
 
 <table>
 <thead>
@@ -202,7 +202,7 @@ The following table presents a detailed comparison of our method (PIO-FVLM) agai
 <td align="center">98.3%</td>
 </tr>
 <tr>
-<td align="left"><strong>PIO-FVLM (Ours)</strong></td>
+<td align="left"><strong>TRIO (Ours)</strong></td>
 <td align="left"><strong>Ours</strong></td>
 <td align="center"><strong>61.1</strong></td>
 <td align="center"><strong>64.2</strong></td>
@@ -270,7 +270,7 @@ The following table presents a detailed comparison of our method (PIO-FVLM) agai
 <td align="center">97.0%</td>
 </tr>
 <tr>
-<td align="left"><strong>PIO-FVLM (Ours)</strong></td>
+<td align="left"><strong>TRIO (Ours)</strong></td>
 <td align="left"><strong>Ours</strong></td>
 <td align="center"><strong>60.0</strong></td>
 <td align="center"><strong>62.9</strong></td>
@@ -393,7 +393,7 @@ The following table presents a detailed comparison of our method (PIO-FVLM) agai
 <td align="center">92.8%</td>
 </tr>
 <tr>
-<td align="left"><strong>PIO-FVLM (Ours)</strong></td>
+<td align="left"><strong>TRIO (Ours)</strong></td>
 <td align="left"><strong>Ours</strong></td>
 <td align="center"><strong>58.0</strong></td>
 <td align="center"><strong>61.6</strong></td>
@@ -448,7 +448,7 @@ The following table presents a detailed comparison of our method (PIO-FVLM) agai
 <td align="center">95.4%</td>
 </tr>
 <tr>
-<td align="left"><strong>PIO-FVLM (Ours)</strong></td>
+<td align="left"><strong>TRIO (Ours)</strong></td>
 <td align="left"><strong>Ours</strong></td>
 <td align="center"><strong>58.3</strong></td>
 <td align="center"><strong>61.6</strong></td>
@@ -484,14 +484,14 @@ Here is the performance comparison of our method against the baseline LLaVA mode
 1. Clone this repository.
 
 ```bash
-git clone https://github.com/ocy1/PIO-FVLM
-cd PIO-FVLM
+git clone https://github.com/ocy1/TRIO
+cd TRIO
 ```
 
 2.Environment Setup and Preparation
 
-```conda create -n PIO_FVLM python=3.10 -y
-conda activate PIO_FVLM
+```conda create -n TRIO python=3.10 -y
+conda activate TRIO
 pip install -e .
 pip install flash-attn --no-build-isolation
 ```
