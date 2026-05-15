@@ -583,11 +583,13 @@ This results in an average visual token retention ratio of 11.1% across the 28 L
 If you find our work useful for your research, please consider citing:
 
 ```bibtex
-@article{zhang2026trio,
-  title={TRIO: Token Reduction via Inference-Objective Guidance
-for Efficient Vision-Language Models},
-  author={Zhang, Haokui and Ou, Congyang and Yan, Dawei and Wang, Peng and Yan, Qingsen and Yu, Zhang and Li, Ying and Xiao, Rong },
-  journal={arXiv preprint arXiv:2602.04657},
-  year={2026}
+@misc{zhang2026triotokenreductioninferenceobjective,
+      title={TRIO: Token Reduction via Inference-Objective Guidance for Efficient Vision-Language Models}, 
+      author={Haokui Zhang and Congyang Ou and Dawei Yan and Peng Wang and Qingsen Yan and Yu Zhang and Ying Li and Rong Xiao},
+      year={2026},
+      eprint={2602.04657},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2602.04657}, 
 }
 ```
